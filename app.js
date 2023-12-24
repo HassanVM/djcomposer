@@ -21,7 +21,7 @@ class DrumKit {
   repeat() {
     let step = this.index % 8;
     const activeBars = document.querySelectorAll(`.b${step}`);
-    //Loop over the pads
+
     activeBars.forEach(bar => {
       bar.style.animation = `playTrack 0.3s alternate ease-in-out 2`;
       if (bar.classList.contains("active")) {
@@ -43,10 +43,9 @@ class DrumKit {
   }
   start() {
     const interval = (60 / this.bpm) * 1000;
-    //Check if it's playing
 
     if (this.isPlaying) {
-      //Clear the interval
+
       clearInterval(this.isPlaying);
       console.log(this.isPlaying);
       this.isPlaying = null;
@@ -57,7 +56,7 @@ class DrumKit {
     }
   }
   updateBtn() {
-    //NULL
+
 
     if (!this.isPlaying) {
       this.playBtn.innerText = "Stop";
@@ -129,7 +128,7 @@ class DrumKit {
 
 const drumKit = new DrumKit();
 
-//Event Listeners
+
 
 drumKit.pads.forEach(pad => {
   pad.addEventListener("click", drumKit.activePad);
